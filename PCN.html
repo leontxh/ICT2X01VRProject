@@ -64,6 +64,7 @@
   <a-assets>
     <img id="ground" src="redroad.png">
     	<img id="sky" src="sky.png">
+      	<img id="grass" src="grass.jpg">
       <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
     	<a-asset-item id="cycle_mtl" src="cycle03/bicycle.max"></a-assert-item>
 
@@ -71,7 +72,7 @@
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
 
     <!--Camera View-->
-	<a-entity look-controls wasd-controls="acceleration: 50" >
+	<a-entity look-controls wasd-controls="acceleration: 50" position="0 1.5 40">
 	  <a-camera></a-camera>
 	</a-entity>
 
@@ -80,6 +81,10 @@
 
 	<!--Code for the road-->
 	<a-plane position="0 0 -4" repeat="1 19" src="#ground" height="350" width="10" rotation="-90 0 0"></a-plane>
+  <!--code for the left side grass-->
+  <a-plane position="10 0 -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
+  <!--code for the right side grass-->
+  <a-plane position=" -10 0  -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
 
 	<!--Code for the sky-->
 	<a-sky src="#sky"></a-sky>
