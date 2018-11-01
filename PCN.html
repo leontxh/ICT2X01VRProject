@@ -64,8 +64,8 @@
   <a-assets>
     <img id="ground" src="redroad.png">
     	<img id="sky" src="sky.png">
-      <a-asset-item id="cycle_obj" src="cycle03/Cycle.obj"></a-assert-item>
-    	<a-asset-item id="cycle_mtl" src="cycle03/Gitane.max"></a-assert-item>
+      <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
+    	<a-asset-item id="cycle_mtl" src="cycle03/bicycle.max"></a-assert-item>
 
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
@@ -86,8 +86,8 @@
 
 
   <a-entity>
-              <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="1 1 -10"></a-obj-model>
-              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="10000"></a-animation>
+              <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
+              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="15000"></a-animation>
  </a-entity>
 
      <a-entity id="walls"></a-entity>
