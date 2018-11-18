@@ -7,6 +7,8 @@
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
 
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 
  <style>
   #about {
@@ -86,17 +88,16 @@
   <!--code for the right side grass-->
   <a-plane position=" -10 0  -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
 
+  <a-sky src="#sky" material="shader:gradient; topColor:41 35 71; bottomColor:41 35 71; offset:0;"></a-sky>
 
 
 
   <a-entity>
-              <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
-              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="15000"></a-animation>
+              <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0.5 1 1" scale="0.1 0.1 0.1"></a-obj-model>
+              <a-animation attribute="position" from="2 0 -100" to="2 0 6" repeat="indefinite" dur="15000"></a-animation>
  </a-entity>
 
- <a-entity>
-             <a-obj-model src="#tree_obj" mtl="#tree_mtl" width="1000px" height="1000px position="20 0 -4" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
-</a-entity>
+
 
 
 </a-scene>
