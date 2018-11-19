@@ -68,6 +68,8 @@
       	<img id="grass" src="grass.jpg">
         <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
     	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
+           <img id="building" src="building.png">
+
 
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
@@ -89,7 +91,8 @@
   <!--code for the right side grass-->
   <a-plane position=" -10 0  -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
 
-
+  <a-box position="15 73 -2" src="#building" depth="400" height="150" width="0.5" rotation="0 0 0"></a-box>
+  <a-box position="-15 73 -2" src="#building" depth="400" height="150" width="0.5" rotation="0 0 0"></a-box>
 
   <a-entity>
               <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>

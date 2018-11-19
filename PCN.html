@@ -65,9 +65,11 @@
 <a-scene>
   <a-assets>
     <img id="ground" src="redroad.png">
-      	<img id="grass" src="grass.jpg">
-        <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
-    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
+    <img id="grass" src="grass.jpg">
+    <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
+    <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
+    <img id="tree" src="tree.png">
+
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
 
@@ -88,6 +90,8 @@
 
   <a-sky src="#sky" material="shader:gradient; topColor:41 35 71; bottomColor:41 35 71; offset:0;"></a-sky>
 
+  <a-box position="15 73 -2" src="#tree" depth="400" height="150" width="0.5" rotation="0 0 0"></a-box>
+  <a-box position="-15 73 -2" src="#tree" depth="400" height="150" width="0.5" rotation="0 0 0"></a-box>
 
 
   <a-entity>
