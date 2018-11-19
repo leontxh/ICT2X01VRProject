@@ -68,14 +68,12 @@
       	<img id="grass" src="grass.jpg">
         <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
     	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
-          <a-asset-item id="tree_obj" src="tree/lowpolytree.obj"></a-assert-item>
-       	   <a-asset-item id="tree_mtl" src="tree/lowpolytree.max"></a-assert-item>
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
 
     <!--Camera View-->
 	<a-entity look-controls wasd-controls="acceleration: 50" position="1 1.5 0">
-	  <a-camera></a-camera>
+	  <a-camera><a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="-360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material=""></a-obj-model></a-camera>
 	</a-entity>
 
 	<!--car object code-->

@@ -67,7 +67,7 @@
     <img id="ground" src="floor.jpg">
       	<img id="grass" src="grass.jpg">
         <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
-    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.max"></a-assert-item>
+    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
 
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
@@ -75,7 +75,7 @@
 
     <!--Camera View-->
 	<a-entity look-controls wasd-controls="acceleration: 50" position="1 1.5 0">
-	  <a-camera></a-camera>
+	  <a-camera><a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="-360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material=""></a-obj-model></a-camera>
 	</a-entity>
 
 	<!--car object code-->
@@ -93,7 +93,7 @@
 
   <a-entity>
               <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
-              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="15000"></a-animation>
+              <a-animation attribute="position" from="2 0 -100" to="2 0 6" repeat="indefinite" dur="15000"></a-animation>
  </a-entity>
 
 
