@@ -9,7 +9,15 @@
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script>
+    function getSkyColor() {
+      var theSkyColor = localStorage.getItem('skyColor');
+    }
+    getSkyColor()
 
+    var myAttr = "shader:gradient; topColor:"+theSkyColor+"; bottomColor:"+theSkyColor+"; offset:0;"
+    document.getElementById(‘skyColor’).setAttribute(“material”,myAttr)
+    </script>
  <style>
   #about {
         display: none;
@@ -92,10 +100,8 @@
 	<a-plane position="0 0 -4" repeat="1 19" src="#ground" height="350" width="10" repeat="5000" rotation="-90 0 0"></a-plane>
 
 	<!--Code for the sky-->
-	<!-- <a-sky src="#sky" rotation=""></a-sky> -->
   <!--Morning sky color  -->
-  <!-- topColor:52 112 251; bottomColor:123 179 220;  -->
-   <a-sky src="#sky" material="shader:gradient; topColor:41 35 71; bottomColor:41 35 71; offset:0;"></a-sky>
+  <a-sky id="skyColor" src="#sky" material="shader:gradient; offset:0;"></a-sky>
 
 	<!--code for the left side grass-->
 	<a-plane position="10 0 -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
