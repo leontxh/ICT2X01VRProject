@@ -97,7 +97,10 @@
 <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-21.911 -4.151 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
 <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-21.911 -4.151 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
 <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-47.671 -3.552 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
-<a-entity ply-model="src:human.ply" position="-50.532 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0"></a-entity>
+
+<a-entity ply-model="src:human.ply" position="-50.532 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0">
+  <a-animation attribute="position" from="-50.532 -3.329 -4" to="-50.532 -3.329 20" dur="10000" repeat="indefinite"></a-animation>
+</a-entity>
   <!--code for the left side pathway--><a-plane position="84 -3.384 -5.235" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0" geometry="width:14"></a-plane>
 
 <a-box position="17.14 69.35 -203.651" src="#building" depth="400" height="150" width="0.5" rotation="0 90 0" geometry="depth:150" material=""></a-box>
@@ -121,8 +124,17 @@
 
 <a-plane position="84 -3.384 -5.235" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0" geometry="width:14"></a-plane>
 <a-plane position="-31 -3.504 -4" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0"></a-plane>
+<a-entity ply-model="src:car.ply" position="-2.341 -3.329 -72.266" scale="0.8 0.8 0.8" rotation="-90 180 0">
+  <a-animation attribute="position" from="-2.341 -3.329 -4" to="-2.341 -3.329 180" dur="10000" repeat="indefinite"></a-animation>
+</a-entity>
 
-<a-entity ply-model="src:human.ply" position="62.494 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0"></a-entity>
+<a-entity ply-model="src:car.ply" position="27.948 -3.329 169.895" scale="0.8 0.8 0.8" rotation="-90 180 180">
+  <a-animation attribute="position" from="27.948 -3.329 169.895" to="27.948 -3.329 -4" dur="10000" repeat="indefinite"></a-animation>
+</a-entity>
+<a-entity ply-model="src:human.ply" position="62.494 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0">
+  <a-animation attribute="position" from="62.494 -3.329 -4" to="62.494 -3.329 100" dur="18000" repeat="indefinite"></a-animation>
+
+</a-entity>
 </a-scene>
 
 </body>
