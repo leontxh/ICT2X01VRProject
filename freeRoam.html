@@ -10,6 +10,10 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+
+    <script src="https://unpkg.com/aframe-aabb-collider-component@^2.2.1/dist/aframe-aabb-collider-component.min.js"></script>
+        <script src="./aabbCollider/EventSet.js"></script>
+        <script src="./aabbCollider/Collider.js"></script>
  <style>
   #about {
         display: none;
@@ -101,7 +105,7 @@
 <a-entity ply-model="src:human.ply" position="-50.532 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0">
   <a-animation attribute="position" from="-50.532 -3.329 -4" to="-50.532 -3.329 20" dur="10000" repeat="indefinite"></a-animation>
 </a-entity>
-  <!--code for the left side pathway--><a-plane position="84 -3.384 -5.235" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0" geometry="width:14"></a-plane>
+<a-plane position="84 -3.384 -5.235" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0" geometry="width:14"></a-plane>
 
 <a-box position="17.14 69.35 -203.651" src="#building" depth="400" height="150" width="0.5" rotation="0 90 0" geometry="depth:150" material=""></a-box>
 <a-box position="-55.588 68.135 53.872" src="#building" depth="400" height="150" width="0.5" geometry="depth:520"></a-box>
