@@ -7,7 +7,8 @@
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
 
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
  <style>
   #about {
         display: none;
@@ -63,42 +64,44 @@
 <a-scene>
   <a-assets>
     <img id="ground" src="floor.jpg">
-    	<img id="sky" src="sky.png">
       	<img id="grass" src="grass.jpg">
+        <img id="redroad" src="redroad.png">
+        <img id="tree" src="tree.png">
+
+
         <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
-    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.max"></a-assert-item>
-          <a-asset-item id="tree_obj" src="tree/lowpolytree.obj"></a-assert-item>
-       	   <a-asset-item id="tree_mtl" src="tree/lowpolytree.max"></a-assert-item>
+    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
+
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
 
     <!--Camera View-->
 	<a-entity look-controls wasd-controls="acceleration: 50" position="1 1.5 0">
-	  <a-camera></a-camera>
+	  <a-camera><<a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="-360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material=""></a-obj-model>/a-camera>
 	</a-entity>
 
 	<!--car object code-->
+  <a-sky src="#sky" material="shader:gradient; topColor:41 35 71; bottomColor:41 35 71; offset:0;"></a-sky>
 
 
 	<!--Code for the road-->
 	<a-plane position="0 0 -4" repeat="1 19" src="#ground" height="350" width="10" rotation="-90 0 0"></a-plane>
+
   <!--code for the left side grass-->
-  <a-plane position="10 0 -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
+  <a-plane position="20 0 -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
   <!--code for the right side grass-->
   <a-plane position=" -10 0  -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
+  <a-plane position="10 0 -4" repeat="1 19" src="#redroad" height="350" width="10" rotation="-90 0 0"></a-plane>
 
-	<!--Code for the sky-->
-	<a-sky src="#sky"></a-sky>
-
+  <a-box position="25 73 -2" src="#tree" depth="400" height="150" width="0.5" rotation="0 0 0"></a-box>
+  <a-box position="-25 73 -2" src="#tree" depth="400" height="150" width="0.5" rotation="0 0 0"></a-box>
 
   <a-entity>
               <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
-              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="15000"></a-animation>
+              <a-animation attribute="position" from="2 0 -100" to="2 0 6" repeat="indefinite" dur="15000"></a-animation>
  </a-entity>
 
- <a-entity>
-             <a-obj-model src="#tree_obj" mtl="#tree_mtl"  position="15.5 0 -4" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
-</a-entity>
+
 
 
 </a-scene>

@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>ICT2X01 VR Environment</title>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <!-- <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> -->
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
-    <script>
-    function getSkyColor() {
-      var theSkyColor = localStorage.getItem('skyColor');
-    }
-    getSkyColor()
 
-    var myAttr = "shader:gradient; topColor:"+theSkyColor+"; bottomColor:"+theSkyColor+"; offset:0;"
-    document.getElementById(‘skyColor’).setAttribute(“material”,myAttr)
-    </script>
  <style>
   #about {
         display: none;
@@ -54,7 +45,7 @@
 </style>
 
 </head>
-<body>
+<body class="a-body ">
 <div id="about">
 
       <b>ICT2X01 VR prototype environment</b>
@@ -70,52 +61,82 @@
         }
       });
 </script>
-<a-scene>
+<a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui=""><canvas class="a-canvas" data-aframe-canvas="true" width="400" height="200"></canvas>
   <a-assets>
     <img id="ground" src="road.png">
-	<img id="sky" src="sky.png">
 	<img id="grass" src="grass.jpg">
 	<img id="pcn" src="floor.jpg">
-	<a-asset-item id="car_obj" src="car/Porsche_911_GT2.obj"></a-assert-item>
-	<a-asset-item id="car_mtl" src="car/Porsche_911_GT2.max"></a-assert-item>
-	</a-assets>
+  <img id="building1" src="building1.png">
+
+  <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj">
+   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl">
+    <!-- <a-asset-item id="car_obj" src="car/Porsche_911_GT2.obj"></a-assert-item>
+    <a-asset-item id="car_mtl" src="car/Porsche_911_GT2.max"></a-assert-item> -->
+
+      <a-assets-item id="human1" src="human.ply"></a-assets-item>
+      <a-assets-item id="tree" src="tree.ply"></a-assets-item>
+      <a-assets-item id="car" src="car.ply"></a-assets-item>
+      <a-asset-item id="ParkingLot_obj" src="ParkingLot/ParkingLot.obj"></a-asset-item>
+      <a-asset-item id="ParkingLot_mtl" src="ParkingLot/ParkingLot.mtl"></a-asset-item>
+
+
+	</a-asset-item></a-asset-item></a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
+  <a-entity ply-model="src:human.ply" position="-42.128 -0.562 -5.605" scale="0.4 0.4 0.4" rotation="-90 0 0"></a-entity>
+
 
     <!--Camera View-->
-	<a-entity look-controls wasd-controls="acceleration: 50" position="20 3 30">
-	  <a-camera></a-camera>
+	<a-entity camera="" look-controls="" wasd-controls="acceleration:1200" position="13.887757057691804 3 -100.5125377401711" rotation="36.16530648780731 -323.14819645378395 0" data-aframe-inspector-original-camera="">
+    <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="-360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material="" obj-model=""></a-obj-model>
 	</a-entity>
 
 	<!--car object code-->
-	<a-entity>
+	<a-entity ply-model="src:car.ply" scale="0.4 0.4 0.4" position="2 0 -37.8645888267045" rotation="-90 0 0"> --&gt;
 			<!--car a on the right -->
-              <a-obj-model src="#car_obj" mtl="#car_mtl" position="1 1 7" rotation="0 0 0"></a-obj-model>
-              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="4000"></a-animation>
+
+              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="14000"></a-animation>
 			  <!--car b on the left -->
-			  <a-obj-model src="#car_obj" mtl="#car_mtl" position="-4 1 7" rotation="0 0 0"></a-obj-model>
-              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="12000"></a-animation>
+			     <!-- <a-obj-model src="#car_obj" mtl="#car_mtl" position="-4 1 7" rotation="0 0 0"></a-obj-model>
+              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="22000"></a-animation> -->
+    </a-entity>
+
+
+    <a-entity position="2 0 -76.61640227375055">
+
+                    <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="30 0 -4" scale="0.1 0.1 0.1" material="" obj-model=""></a-obj-model>
+                    <a-animation attribute="position" from="2 0 -100" to="2 0 100" repeat="indefinite" dur="15000"></a-animation>
     </a-entity>
 
 	<!--Code for the road-->
-	<a-plane position="0 0 -4" repeat="1 19" src="#ground" height="350" width="10" repeat="5000" rotation="-90 0 0"></a-plane>
-
+	<a-plane position="14.567 -2.723 -7.654" repeat="1 19" src="#ground" height="400" width="50" rotation="-90 0 0" material="" geometry="width:84"></a-plane>
 	<!--Code for the sky-->
   <!--Morning sky color  -->
-  <a-sky id="skyColor" src="#sky" material="shader:gradient; offset:0;"></a-sky>
 
-	<!--code for the left side grass-->
-	<a-plane position="10 0 -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
-	<!--code for the right side grass-->
-	<a-plane position=" -10 0  -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
+
 
 	<!--code for the right side pathway-->
-	<a-plane position="20 0 -4" repeat="1 19" src="#pcn" height="350" width="10" rotation="-90 0 0"></a-plane>
+	<a-plane position="61.923 -3.424 -4.951" repeat="1 19" src="#pcn" height="400" width="10" rotation="-90 0 0" material="" geometry="width:14"></a-plane>
 	<!--code for the left side pathway-->
-	<a-plane position="-20 0 -4" repeat="1 19" src="#pcn" height="350" width="10" rotation="-90 0 0"></a-plane>
+	<a-plane position="-40.703 -3.458 -4" repeat="1 19" src="#pcn" height="400" width="10" rotation="-90 0 0" material="" geometry=""></a-plane>
 
+  <a-plane position="-49.565 -3.257 -4" repeat="1 19" src="#pcn" height="400" width="10" rotation="-90 0 0" material="" geometry=""></a-plane>
 
-  	<a-plane position="30 0 -4" repeat="1 19" src="#pcn" height="350" width="10" rotation="-90 0 0"></a-plane>
+  	<a-plane position="71.886 -3.456 -2.846" repeat="1 19" src="#pcn" height="400" width="10" rotation="-90 0 0" material="" geometry=""></a-plane>
+
+    <a-plane position="83.703 -3.384 -5.235" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0" material="" geometry="width:14"></a-plane>
+  	<!--code for the right side grass-->
+  	<a-plane position="-30.8 -3.637 -4" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0" material="" geometry=""></a-plane>
+
+    <a-box position="88.198 64.308 -6.737" src="#building1" depth="400" height="150" width="0.5" material="" geometry=""></a-box>
+    <a-box position="-54.984 71.748 -2.182" src="#building1" depth="400" height="150" width="0.5" material="" geometry=""></a-box>
+    <a-entity>
+
+<a-obj-model src="#ParkingLot_obj" mtl="#ParkingLot_mtl" position="53.331 -3.951 392.102" scale="50 50 100" material="" obj-model=""></a-obj-model>
+    </a-entity>
+
 </a-scene>
 
-</body>
-</html>
+
+
+
+</body></html>

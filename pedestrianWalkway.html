@@ -7,6 +7,8 @@
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
 
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 
  <style>
   #about {
@@ -48,7 +50,7 @@
 <div id="about">
 
       <b>ICT2X01 VR prototype environment</b>
-      <p>Welcome to Team 16 VR prototype environment, please free feel to explore the environment</p>
+      <p>Walkway</p>
 
  </div>
 <script>
@@ -63,42 +65,74 @@
 <a-scene>
   <a-assets>
     <img id="ground" src="floor.jpg">
-    	<img id="sky" src="sky.png">
       	<img id="grass" src="grass.jpg">
+        <img id="building" src="kkk.png">
         <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
-    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.max"></a-assert-item>
-          <a-asset-item id="tree_obj" src="tree/lowpolytree.obj"></a-assert-item>
-       	   <a-asset-item id="tree_mtl" src="tree/lowpolytree.max"></a-assert-item>
+    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
+           <a-asset-item id="tree" src="town/model.gltf"></a-asset-item>
+      <a-asset-item id="temple-obj" src="temple/blender_export.obj"></a-asset-item>
+      <a-asset-item id="temple-mtl" src="temple/blender_export.mtl"></a-asset-item>
+
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
+  <a-sky src="#sky" material="shader:gradient; topColor:41 35 71; bottomColor:41 35 71; offset:0;"></a-sky>
 
     <!--Camera View-->
-	<a-entity look-controls wasd-controls="acceleration: 50" position="1 1.5 0">
-	  <a-camera></a-camera>
+	<a-entity camera look-controls wasd-controls="acceleration: 200" position="1 1.5 100">
+  <!--   <a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1"
+            material="color: gray; opacity: 0.5"></a-entity> -->
+	   <a-entity>
+              
+              <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0.118 -2.026 -0.288" rotation="0 180 0" scale="0.1 0.1 0.1" material=""></a-obj-model>
+
+             <!--  <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="15000"></a-animation> -->
+ </a-entity>
 	</a-entity>
 
 	<!--car object code-->
+ 
+  <!-- <a-entity gltf-model="#tree" ></a-entity> -->
+<a-entity gltf-model="town/model.gltf" position="4.868 -28.811 0.129" rotation="0 90 0" scale="25 25 25"></a-entity>
 
-
+  <a-entity gltf-model="town/model.gltf" position="4.836 -28.865 36.629" rotation="0 90 0" scale="25 25 25"></a-entity>
+ <a-entity gltf-model="town/model.gltf" position="4.836 -28.865 72.612" rotation="0 90 0" scale="25 25 25"></a-entity>
+ <a-entity gltf-model="highway/highway.gltf" position="-76.429 0.464 -30.094" rotation="0 90 0" scale="0.025 0.025 0.025"></a-entity>
+<a-entity gltf-model="highway/highway.gltf" position="-64.08 0.413 67.907" rotation="0 90 0" scale="0.025 0.025 0.025"></a-entity>
+<a-entity gltf-model="town2/model.gltf" position="-0.237 -25.489 84.704" rotation="0 96 2" scale="25 25 25"></a-entity>
 	<!--Code for the road-->
-	<a-plane position="0 0 -4" repeat="1 19" src="#ground" height="350" width="10" rotation="-90 0 0"></a-plane>
+	<a-plane position="0 0 -4" repeat="1 19" src="#ground" height="250" width="10" rotation="-90 0 0"></a-plane>
   <!--code for the left side grass-->
-  <a-plane position="10 0 -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
+  <a-plane position="10 0 -4" repeat="1 19" src="#grass" height="250" width="10" rotation="-90 0 0"></a-plane>
   <!--code for the right side grass-->
-  <a-plane position=" -10 0  -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
-
-	<!--Code for the sky-->
-	<a-sky src="#sky"></a-sky>
+  <a-plane position=" -10 0  -4" repeat="1 19" src="#grass" height="250" width="10" rotation="-90 0 0"></a-plane>
 
 
-  <a-entity>
-              <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
-              <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="15000"></a-animation>
- </a-entity>
+   <a-entity obj-model="mtl:temple/blender_export.mtl;obj:temple/blender_export.obj" position="-36.49 0.273 -67.58"></a-entity>
 
- <a-entity>
-             <a-obj-model src="#tree_obj" mtl="#tree_mtl"  position="15.5 0 -4" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
-</a-entity>
+   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="8.449 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="9.971 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="11.663 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="13.248 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="14.825 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-0.383 0.599 112.08" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+
+
+
+
+<a-box position="16.539 5.639 -0.863" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1" material="" geometry=""></a-box>
+<a-box position="16.539 5.639 38.332" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="16.456 5.692 77.638" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="16.456 5.692 117.259" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="-0.164 5.692 121.441" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1" rotation="0 90 0"></a-box>
+<a-box position="-16.025 5.639 112.032" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="-16.025 5.639 72.544" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="-16.025 5.639 33.918" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="-16.025 5.639 -5.497" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="-16.025 5.639 -119.131" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="3.638 5.639 -131.351" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1" rotation="0 90 0"></a-box>
+<a-box position="16.539 5.639 -118.113" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="16.539 5.639 -80.47" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
+<a-box position="16.539 5.639 -40.564" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
 
 
 </a-scene>
