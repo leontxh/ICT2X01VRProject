@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width">
     <title>ICT2X01 VR Environment</title>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <!-- <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> -->
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
  <style>
@@ -72,12 +73,13 @@
         <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
     	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
 
+
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
 
     <!--Camera View-->
-	<a-entity look-controls wasd-controls="acceleration: 50" position="1 1.5 0">
-	  <a-camera><<a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="-360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material=""></a-obj-model>/a-camera>
+	<a-entity camera="" look-controls wasd-controls="acceleration: 200" position="1 1.5 0">
+	<<a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="-360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material=""></a-obj-model>
 	</a-entity>
 
 	<!--car object code-->
@@ -100,6 +102,7 @@
               <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
               <a-animation attribute="position" from="2 0 -100" to="2 0 6" repeat="indefinite" dur="15000"></a-animation>
  </a-entity>
+ <a-entity ply-model="src:human.ply" position="0 0 -4" scale="0.4 0.4 0.4" rotation="-90 0 0"></a-entity>
 
 
 
