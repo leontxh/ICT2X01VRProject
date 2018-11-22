@@ -8,12 +8,21 @@
 <script>
 function setDaySky()
 {
-  localStorage.setItem('skyColor', '00 00 00');
+  localStorage.setItem('colorSetting', '');
 }
 
 function setNightSky()
 {
-  localStorage.setItem('skyColor', '#413571');
+  localStorage.setItem('colorSetting', 'shader:gradient; topColor:41 35 71; bottomColor:41 35 71; offset:0;');
+}
+function setOneCar()
+{
+  localStorage.setItem('carVisibility', 'false');
+}
+
+function setTwoCar()
+{
+  localStorage.setItem('carVisibility', 'true');
 }
 
 
@@ -96,7 +105,7 @@ function setNightSky()
       </a-gui-label>
       <a-gui-radio for ="bgcolor"
         width="1.0" height="0.50"
-        onclick="testToggleAction"
+        onclick="setOneCar"
         font-family="Arial"
         margin="0 0 0 0"
         id="bgcolor"
@@ -106,6 +115,19 @@ function setNightSky()
         background-color: rgb(23, 12, 12);
          color: rgb(255, 255, 255);">
        </a-gui-radio>
+
+       <a-gui-radio for ="bgcolor"
+         width="1.0" height="0.50"
+         onclick="setTwoCar"
+         font-family="Arial"
+         margin="0 0 0 0"
+         id="bgcolor"
+         value="2"
+         autocomplete="off"
+         style="background-image: none;
+         background-color: rgb(23, 12, 12);
+          color: rgb(255, 255, 255);">
+        </a-gui-radio>
 
 				<a-gui-label
 				width="3.0" height="0.50"
