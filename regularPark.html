@@ -71,14 +71,16 @@
 
 
         <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
-    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
-
+    	  <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
+        <a-asset-item id="ParkingLot_obj" src="ParkingLot/ParkingLot.obj"></a-assert-item>
+        <a-asset-item id="ParkingLot_mtl" src="ParkingLot/ParkingLot.mtl"></a-assert-item>
 
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
 
     <!--Camera View-->
-	<a-entity camera="" look-controls wasd-controls="acceleration: 200" position="1 1.5 0">
+	<a-entity camera="" look-controls wasd-controls="acceleration: 200" position="-7.792 1.805 409.468">
+
 	<<a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="-360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material=""></a-obj-model>
 	</a-entity>
 
@@ -95,18 +97,23 @@
   <a-plane position=" -10 0  -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
   <a-plane position="10 0 -4" repeat="1 19" src="#redroad" height="350" width="10" rotation="-90 0 0"></a-plane>
 
-  <a-box position="25 73 -2" src="#tree" depth="400" height="150" width="0.5" rotation="0 0 0"></a-box>
-  <a-box position="-25 73 -2" src="#tree" depth="400" height="150" width="0.5" rotation="0 0 0"></a-box>
+<a-box position="392.927 73 356.005" src="#tree" depth="360" height="150" width="0.5" geometry="depth:400"></a-box>
+<a-box position="186.523 69.302 559.579" src="#tree" depth="360" height="150" width="0.5" geometry="depth:410" rotation="0 90 0"></a-box>
+<a-box position="-14.6 73 371.957" src="#tree" depth="360" height="150" width="0.5" geometry="depth:400"></a-box>
+<a-box position="-14.6 73 -9.968" src="#tree" depth="360" height="150" width="0.5" material="" geometry=""></a-box>
+<a-box position="7.857 73 -182.23" src="#tree" depth="360" height="150" width="0.5" rotation="0 90 0" geometry="depth:50"></a-box>
+<a-box position="25 73 -10.781" src="#tree" depth="360" height="150" width="0.5" geometry="depth:350"></a-box>
+<a-box position="215.962 69.302 164.191" src="#tree" depth="360" height="150" width="0.5" geometry="depth:380" rotation="0 90 0"></a-box>
 
   <a-entity>
-              <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0 0 7" rotation="0 0 0" scale="0.1 0.1 0.1"></a-obj-model>
-              <a-animation attribute="position" from="2 0 -100" to="2 0 6" repeat="indefinite" dur="15000"></a-animation>
+<a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="5.64 0 7" scale="0.1 0.1 0.1" material=""></a-obj-model>
+ <a-animation attribute="position" from="2 0 -100" to="2 0 6" repeat="indefinite" dur="15000"></a-animation>
  </a-entity>
- <a-entity ply-model="src:human.ply" position="0 0 -4" scale="0.4 0.4 0.4" rotation="-90 0 0"></a-entity>
+<a-entity ply-model="src:human.ply" position="0 0 -4" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 
-
-
-
+<a-entity>
+  <a-obj-model src="#ParkingLot_obj" mtl="#ParkingLot_mtl" position="202.378 -6.328 368.135" scale="100 100 100" material=""></a-obj-model>
+</a-entity>
 </a-scene>
 
 </body>
