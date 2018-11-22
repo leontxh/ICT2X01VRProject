@@ -10,7 +10,29 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script>
+    AFRAME.registerComponent("car", {
+    init: function() {
+    this.el.setAttribute("visible", localStorage.getItem("carVisibility"))
+    }
+    })
+    </script>
+    <script>
+    AFRAME.registerComponent("sky", {
+    init: function() {
+    this.el.setAttribute("material", localStorage.getItem("colorSetting"))
+    }
+    })
+    </script>
+    <script>
+    AFRAME.registerComponent("person", {
+    init: function() {
+    this.el.setAttribute("visible", localStorage.getItem("personVisibility"))
+    }
+    })
+    </script>
  <style>
+
   #about {
         display: none;
         position: absolute;
@@ -85,7 +107,7 @@
 	</a-entity>
 
 	<!--car object code-->
-  <a-sky src="#sky" material="shader:gradient; topColor:41 35 71; bottomColor:41 35 71; offset:0;"></a-sky>
+  <a-sky src="#sky" rotation ="" sky></a-sky>
 
 
 	<!--Code for the road-->

@@ -9,20 +9,7 @@
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
-    <script>
-    AFRAME.registerComponent("car", {
-    init: function() {
-    this.el.setAttribute("visible", localStorage.getItem("carVisibility"))
-    }
-    })
-    </script>
-    <script>
-    AFRAME.registerComponent("sky", {
-    init: function() {
-    this.el.setAttribute("material", localStorage.getItem("colorSetting"))
-    }
-    })
-    </script>
+
  <style>
   #about {
         display: none;
@@ -88,12 +75,11 @@
 	<a-entity look-controls wasd-controls="acceleration: 50" position="20 3 30">
 	  <a-camera></a-camera>
 	</a-entity>
+
 	<!--car object code-->
 	<a-entity>
 			<!--car a on the right -->
-
-              <a-obj-model
-              id="carA"  src="#car_obj" mtl="#car_mtl" position="1 1 7" rotation="0 0 0" car></a-obj-model>
+              <a-obj-model src="#car_obj" mtl="#car_mtl" position="1 1 7" rotation="0 0 0"></a-obj-model>
               <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="4000"></a-animation>
 			  <!--car b on the left -->
 			  <a-obj-model src="#car_obj" mtl="#car_mtl" position="-4 1 7" rotation="0 0 0"></a-obj-model>
@@ -103,8 +89,10 @@
 	<!--Code for the road-->
 	<a-plane position="0 0 -4" repeat="1 19" src="#ground" height="350" width="10" repeat="5000" rotation="-90 0 0"></a-plane>
 
+
 	<!--Code for the sky-->
-  <a-sky src="#sky" rotation ="" sky></a-sky>
+  <a-sky src="#sky" rotation=""></a-sky>
+  <!--Morning sky color  -->
 	<!--code for the left side grass-->
 	<a-plane position="10 0 -4" repeat="1 19" src="#grass" height="350" width="10" rotation="-90 0 0"></a-plane>
 	<!--code for the right side grass-->
