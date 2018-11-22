@@ -8,7 +8,7 @@
 <script>
 function setDaySky()
 {
-  localStorage.setItem('colorSetting', '');
+  localStorage.setItem('colorSetting', 'shader:gradient; topColor:52 112 251; bottomColor:123 179 220; offset:0;');
 }
 
 function setNightSky()
@@ -24,7 +24,14 @@ function setTwoCar()
 {
   localStorage.setItem('carVisibility', 'true');
 }
-
+function setOnePerson()
+{
+  localStorage.setItem('personVisibility', 'false');
+}
+function setTwoPerson()
+{
+  localStorage.setItem('personVisibility', 'true');
+}
 
 </script>
 	<style type="text/css">
@@ -93,7 +100,7 @@ function setTwoCar()
 
 
 		<a-gui-flex-container
-			flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="3.5" height="4.5"
+			flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="5.0" height="6.5"
 			position="-2 2.5 -4" rotation="0 0 0"
 		>
 			<a-gui-label
@@ -104,12 +111,13 @@ function setTwoCar()
 			>
       </a-gui-label>
       <a-gui-radio for ="bgcolor"
+
         width="1.0" height="0.50"
         onclick="setOneCar"
         font-family="Arial"
         margin="0 0 0 0"
         id="bgcolor"
-        value="1"
+        value="2"
         autocomplete="off"
         style="background-image: none;
         background-color: rgb(23, 12, 12);
@@ -122,19 +130,48 @@ function setTwoCar()
          font-family="Arial"
          margin="0 0 0 0"
          id="bgcolor"
+         value="4"
+         autocomplete="off"
+         style="background-image: none;
+         background-color: rgb(23, 12, 12);
+          color: rgb(255, 255, 255);">
+        </a-gui-radio>
+        <a-gui-label
+				width="3.0" height="0.50"
+				value="Number of Pedestrians"
+				font-family="Arial"
+				margin="0 0 0.05 0">
+        </a-gui-label>
+
+        <a-gui-radio for ="bgcolor"
+        width="1.0" height="0.50"
+        onclick="setOnePerson"
+        font-family="Arial"
+        margin="0 0 0 0"
+        id="bgcolor"
+        value="1"
+        autocomplete="off"
+        style="background-image: none;
+        background-color: rgb(23, 12, 12);
+         color: rgb(255, 255, 255);">
+       </a-gui-radio>
+       <a-gui-radio for ="bgcolor"
+         width="1.0" height="0.50"
+         onclick="setTwoPerson"
+         font-family="Arial"
+         margin="0 0 0 0"
+         id="bgcolor"
          value="2"
          autocomplete="off"
          style="background-image: none;
          background-color: rgb(23, 12, 12);
           color: rgb(255, 255, 255);">
         </a-gui-radio>
-
 				<a-gui-label
 				width="3.0" height="0.50"
 				value="Environment Settings"
 				font-family="Arial"
 				margin="0 0 0.05 0"
-
 			>
 			</a-gui-label>
       <a-gui-radio for ="bgcolor"
@@ -149,7 +186,6 @@ function setTwoCar()
         background-color: rgb(23, 12, 12);
          color: rgb(255, 255, 255);">
        </a-gui-radio>
-
        <a-gui-radio for ="bgcolor"
          width="3.0" height="0.50"
          onclick="setNightSky"
@@ -163,7 +199,6 @@ function setTwoCar()
           color: rgb(255, 255, 255);">
         </a-gui-radio>
 		</a-gui-flex-container>
-
 		<!-- Camera + cursor. -->
 		<a-entity id="cameraRig" position="0 1.6 0">
 			<a-camera look-controls wasd-controls position="0 0 0">
