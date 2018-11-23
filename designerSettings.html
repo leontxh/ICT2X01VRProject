@@ -100,9 +100,18 @@ function setTwoPerson()
 
 
 		<a-gui-flex-container
-			flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="5.0" height="6.5"
+			flex-direction="column" justify-content="left" align-items="left" component-padding="0.1" opacity="0.7" width="5.0" height="6.5"
 			position="-2 2.5 -4" rotation="0 0 0"
 		>
+    <a-gui-button
+  width="1.0" height="0.50"
+  align="left"
+  onclick="window.location.href='newlogin.html'" key-code="32"
+  value="Back"
+  font-family="Arial"
+  margin="0 5 0.05 0"
+  >
+  </a-gui-button>
 			<a-gui-label
 				width="3.0" height="0.50"
 				value="Number of Cars"

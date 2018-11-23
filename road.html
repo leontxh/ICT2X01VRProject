@@ -20,6 +20,28 @@
 
     <!-- <script src="https://unpkg.com/aframe-aabb-collider-component@^2.2.1/dist/aframe-aabb-collider-component.min.js"></script> -->
 
+    <script>
+    AFRAME.registerComponent("car", {
+    init: function() {
+    this.el.setAttribute("visible", localStorage.getItem("carVisibility"))
+    }
+    })
+    </script>
+    <script>
+    AFRAME.registerComponent("sky", {
+    init: function() {
+    this.el.setAttribute("material", localStorage.getItem("colorSetting"))
+    }
+    })
+    </script>
+    <script>
+    AFRAME.registerComponent("person", {
+    init: function() {
+    this.el.setAttribute("visible", localStorage.getItem("personVisibility"))
+    }
+    })
+    </script>
+
  <style>
   #about {
         display: none;
@@ -85,14 +107,20 @@
 
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
-  <a-sky src="#sky" material="shader:gradient; topColor:41 35 71; bottomColor:41 35 71; offset:0;"></a-sky>
+  <a-entity ply-model="src:human2.ply" position="-13.12 0 -99.443" scale="0.2 0.2 0.2" rotation="-90 0 0">
+                  <a-animation attribute="position" from="-13.12 0 -99.443" to="-13.12 0 -42.636" dur="10000" repeat="indefinite"></a-animation>
+  </a-entity>
+  <a-entity ply-model="src:human3.ply" position="-9.995 0 -114.029" scale="0.2 0.2 0.2" rotation="-90 0 0" person="">
+              <a-animation attribute="position" from="-9.995 0 -114.029" to="-9.995 0 -43.320" dur="10000" repeat="indefinite"></a-animation>
+    </a-entity>
+  <a-sky src="#sky" rotation ="" sky></a-sky>
 
     <!--Camera View-->
 	<a-entity camera look-controls wasd-controls="acceleration: 200" position="1 1.5 100">
   <!--   <a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1"
             material="color: gray; opacity: 0.5"></a-entity> -->
 	   <a-entity>
-              
+
               <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" position="0.118 -2.026 -0.288" rotation="0 180 0" scale="0.1 0.1 0.1" material=""></a-obj-model>
 
              <!--  <a-animation attribute="position" from="2 0 6" to="2 0 -100" repeat="indefinite" dur="15000"></a-animation> -->
@@ -101,7 +129,7 @@
 
 
 	<!--car object code-->
- 
+
   <!-- <a-entity gltf-model="#tree" ></a-entity> -->
 <a-entity gltf-model="town/model.gltf" position="4.83 -28.881 0.129" rotation="0 90 0" scale="25 25 25"></a-entity>
 
@@ -129,7 +157,7 @@
    <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="14.825 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
    <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-0.383 0.599 112.08" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
 
-<a-entity ply-model="src:car.ply" position="3.310 0.501 -72.266" scale="0.1 0.1 0.1" rotation="-90 180 0">
+<a-entity ply-model="src:car.ply" position="3.310 0.501 -72.266" scale="0.1 0.1 0.1" rotation="-90 180 0" car>
   <a-animation attribute="position" from="3.310 0.809 -115.832" to="3.310 0.809 -29.824" dur="9000" repeat="indefinite"></a-animation>
 </a-entity>
 
@@ -137,7 +165,13 @@
   <a-animation attribute="position" from="-1.885 0.809 -115.832" to="-1.885 0.809 -29.824" dur="6000" repeat="indefinite"></a-animation>
 </a-entity>
 
+<a-entity ply-model="src:car.ply" position="12.269 0.809 -31.051" scale="0.1 0.1 0.1" rotation="-90 180 0" car>
+  <a-animation attribute="position" from="-1.885 0.809 -115.832" to="-1.885 0.809 -29.824" dur="6000" repeat="indefinite"></a-animation>
+</a-entity>
 
+<a-entity ply-model="src:car.ply" position="10.287 0.89 -7.872" scale="0.1 0.1 0.1" rotation="-90 180 0">
+  <a-animation attribute="position" from="-1.885 0.809 -115.832" to="-1.885 0.809 -29.824" dur="6000" repeat="indefinite"></a-animation>
+</a-entity>
 
 <a-box position="16.539 5.639 -0.863" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1" material="" geometry=""></a-box>
 <a-box position="16.539 5.639 38.332" src="#building" depth="400" height="150" width="0.5" scale="0.1 0.1 0.1"></a-box>
