@@ -93,8 +93,11 @@ function setTwoPerson()
 
 		<a-light type="directional" color="#FFF" intensity="1" position="-1 1 2"> </a-light>
 		<a-light type="ambient" color="#ebd9e9"> </a-light>
-		<a-sky src="#gradient"></a-sky>
-  		<a-image position="0 -.025 0" height="300" width="300" rotation="90 0 0" src="#ground" repeat="300 300" material="color:#ebd9e9"></a-image>
+		<a-assets>
+           <img id="backgroundInsideHouse" crossorigin="anonymous" src="assets/fff.jpg">
+    </a-assets>
+
+    <a-sky id="background-img" src="#backgroundInsideHouse"></a-sky>
 
 
 

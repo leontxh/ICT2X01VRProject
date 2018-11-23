@@ -96,21 +96,21 @@
 </script>
 <a-scene>
   <a-assets>
-    <img id="ground" src="floor.jpg">
-      	<img id="grass" src="grass.jpg">
-        <img id="building" src="kkk.png">
-        <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
-    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
-           <a-asset-item id="tree" src="town/model.gltf"></a-asset-item>
-      <a-asset-item id="temple-obj" src="temple/blender_export.obj"></a-asset-item>
-      <a-asset-item id="temple-mtl" src="temple/blender_export.mtl"></a-asset-item>
+    <img id="ground" src="assets/floor.jpg">
+      	<img id="grass" src="assets/grass.jpg">
+        <img id="building" src="assets/kkk.png">
+        <a-asset-item id="cycle_obj" src="model/cycle03/bicycle.obj"></a-assert-item>
+    	   <a-asset-item id="cycle_mtl" src="model/cycle03/bicycle.mtl"></a-assert-item>
+           <a-asset-item id="tree" src="model/town/model.gltf"></a-asset-item>
+      <a-asset-item id="temple-obj" src="model/temple/blender_export.obj"></a-asset-item>
+      <a-asset-item id="temple-mtl" src="model/temple/blender_export.mtl"></a-asset-item>
 
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
-  <a-entity ply-model="src:human2.ply" position="-13.12 0 -99.443" scale="0.2 0.2 0.2" rotation="-90 0 0">
+  <a-entity ply-model="src:model/human2.ply" position="-13.12 0 -99.443" scale="0.2 0.2 0.2" rotation="-90 0 0">
                   <a-animation attribute="position" from="-13.12 0 -99.443" to="-13.12 0 -42.636" dur="10000" repeat="indefinite"></a-animation>
   </a-entity>
-  <a-entity ply-model="src:human3.ply" position="-9.995 0 -114.029" scale="0.2 0.2 0.2" rotation="-90 0 0" person="">
+  <a-entity ply-model="src:model/human3.ply" position="-9.995 0 -114.029" scale="0.2 0.2 0.2" rotation="-90 0 0" person="">
               <a-animation attribute="position" from="-9.995 0 -114.029" to="-9.995 0 -43.320" dur="10000" repeat="indefinite"></a-animation>
     </a-entity>
   <a-sky src="#sky" rotation ="" sky></a-sky>
@@ -131,13 +131,13 @@
 	<!--car object code-->
 
   <!-- <a-entity gltf-model="#tree" ></a-entity> -->
-<a-entity gltf-model="town/model.gltf" position="4.83 -28.881 0.129" rotation="0 90 0" scale="25 25 25"></a-entity>
+<a-entity gltf-model="model/town/model.gltf" position="4.83 -28.881 0.129" rotation="0 90 0" scale="25 25 25"></a-entity>
 
-  <a-entity gltf-model="town/model.gltf" position="4.836 -28.865 36.629" rotation="0 90 0" scale="25 25 25"></a-entity>
- <a-entity gltf-model="town/model.gltf" position="4.836 -28.865 72.612" rotation="0 90 0" scale="25 25 25"></a-entity>
- <a-entity gltf-model="highway/highway.gltf" position="-76.429 0.464 -30.094" rotation="0 90 0" scale="0.025 0.025 0.025"></a-entity>
-<a-entity gltf-model="highway/highway.gltf" position="-64.08 0.413 67.907" rotation="0 90 0" scale="0.025 0.025 0.025"></a-entity>
-<a-entity gltf-model="town2/model.gltf" position="-0.237 -25.489 84.704" rotation="0 96 2" scale="25 25 25"></a-entity>
+  <a-entity gltf-model="model/town/model.gltf" position="4.836 -28.865 36.629" rotation="0 90 0" scale="25 25 25"></a-entity>
+ <a-entity gltf-model="model/town/model.gltf" position="4.836 -28.865 72.612" rotation="0 90 0" scale="25 25 25"></a-entity>
+ <a-entity gltf-model="model/highway/highway.gltf" position="-76.429 0.464 -30.094" rotation="0 90 0" scale="0.025 0.025 0.025"></a-entity>
+<a-entity gltf-model="model/highway/highway.gltf" position="-64.08 0.413 67.907" rotation="0 90 0" scale="0.025 0.025 0.025"></a-entity>
+<a-entity gltf-model="model/town2/model.gltf" position="-0.237 -25.489 84.704" rotation="0 96 2" scale="25 25 25"></a-entity>
 
 	<!--Code for the road-->
 	<!-- <a-plane position="0 0 -4" repeat="1 19" src="#ground" height="250" width="10" rotation="-90 0 0"></a-plane> -->
@@ -148,28 +148,28 @@
 
 
 
-   <a-entity obj-model="mtl:temple/blender_export.mtl;obj:temple/blender_export.obj" position="-33.582 0.273 -67.58"></a-entity>
+   <a-entity obj-model="mtl:model/temple/blender_export.mtl;obj:temple/blender_export.obj" position="-33.582 0.273 -67.58"></a-entity>
 
-   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="8.449 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
-   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="9.971 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
-   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="11.663 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
-   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="13.248 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
-   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="14.825 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
-   <a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-0.383 0.599 112.08" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="8.449 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="9.971 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="11.663 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="13.248 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="14.825 0.599 72.383" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
+   <a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="-0.383 0.599 112.08" rotation="0 180 0" scale="0.01 0.01 0.01"></a-entity>
 
-<a-entity ply-model="src:car.ply" position="3.310 0.501 -72.266" scale="0.1 0.1 0.1" rotation="-90 180 0" car>
+<a-entity ply-model="src:model/car.ply" position="3.310 0.501 -72.266" scale="0.1 0.1 0.1" rotation="-90 180 0" car>
   <a-animation attribute="position" from="3.310 0.809 -115.832" to="3.310 0.809 -29.824" dur="9000" repeat="indefinite"></a-animation>
 </a-entity>
 
-<a-entity ply-model="src:car.ply" position="-1.885 0.501 -72.266" scale="0.1 0.1 0.1" rotation="-90 180 0">
+<a-entity ply-model="src:model/car.ply" position="-1.885 0.501 -72.266" scale="0.1 0.1 0.1" rotation="-90 180 0">
   <a-animation attribute="position" from="-1.885 0.809 -115.832" to="-1.885 0.809 -29.824" dur="6000" repeat="indefinite"></a-animation>
 </a-entity>
 
-<a-entity ply-model="src:car.ply" position="12.269 0.809 -31.051" scale="0.1 0.1 0.1" rotation="-90 180 0" car>
+<a-entity ply-model="src:model/car.ply" position="12.269 0.809 -31.051" scale="0.1 0.1 0.1" rotation="-90 180 0" car>
   <a-animation attribute="position" from="-1.885 0.809 -115.832" to="-1.885 0.809 -29.824" dur="6000" repeat="indefinite"></a-animation>
 </a-entity>
 
-<a-entity ply-model="src:car.ply" position="10.287 0.89 -7.872" scale="0.1 0.1 0.1" rotation="-90 180 0">
+<a-entity ply-model="src:model/car.ply" position="10.287 0.89 -7.872" scale="0.1 0.1 0.1" rotation="-90 180 0">
   <a-animation attribute="position" from="-1.885 0.809 -115.832" to="-1.885 0.809 -29.824" dur="6000" repeat="indefinite"></a-animation>
 </a-entity>
 

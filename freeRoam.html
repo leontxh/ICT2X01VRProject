@@ -89,38 +89,38 @@
 </script>
 <a-scene>
   <a-assets>
-    <img id="ground" src="floor.jpg">
-      	<img id="grass" src="grass.jpg">
-        <img id="road" src="road.png">
-        <img id="tree" src="tree.png">
-        <img id="building" src="building1.png">
+    <img id="ground" src="assets/floor.jpg">
+      	<img id="grass" src="assets/grass.jpg">
+        <img id="road" src="assets/road.png">
+        <img id="tree" src="assets/tree.png">
+        <img id="building" src="assets/building1.png">
 
-        <a-asset-item id="cycle_obj" src="cycle03/bicycle.obj"></a-assert-item>
-    	   <a-asset-item id="cycle_mtl" src="cycle03/bicycle.mtl"></a-assert-item>
+        <a-asset-item id="cycle_obj" src="model/cycle03/bicycle.obj"></a-assert-item>
+    	   <a-asset-item id="cycle_mtl" src="model/cycle03/bicycle.mtl"></a-assert-item>
 
 
 	</a-assets>
   <!-- <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity> -->
 
     <!--Camera View-->
-    <a-entity camera=""look-controls wasd-controls="acceleration:200" position="-43.222 -0.831 -11.581" rotation="-360 180 0">
-    <<a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material=""></a-obj-model>
+    <a-entity camera="" look-controls wasd-controls="acceleration:200" position="-43.222 -0.831 -11.581" rotation="-360 180 0">
+    <a-obj-model src="#cycle_obj" mtl="#cycle_mtl" rotation="360 -180 360" scale="0.1 0.1 0.1" position="0.118 -2.026 -0.288" material=""></a-obj-model>
     </a-entity>
 
 	<!--Code for the road-->
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="74.933 -4.465 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="64.097 -4.791 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="49.024 -4.371 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="35.337 -4.015 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="35.337 -4.015 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="7.464 -5.269 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-6.645 -5.409 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-21.911 -4.151 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-21.911 -4.151 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
-<a-entity gltf-model="stop/CUPIC_STOPSIGN.gltf" position="-47.671 -3.552 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="74.933 -4.465 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="64.097 -4.791 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="49.024 -4.371 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="35.337 -4.015 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="35.337 -4.015 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="7.464 -5.269 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="-6.645 -5.409 -174.772" rotation="0 180 0" scale="0.08 0.05 0.01"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="-21.911 -4.151 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="-21.911 -4.151 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
+<a-entity gltf-model="model/stop/CUPIC_STOPSIGN.gltf" position="-47.671 -3.552 -174.68" rotation="0 180 0" scale="0.08 0.05 0.08"></a-entity>
 
 
-<a-entity ply-model="src:human.ply" position="-50.532 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0">
+<a-entity ply-model="src:model/human.ply" position="-50.532 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0">
   <a-animation attribute="position" from="-50.532 -3.329 -4" to="-50.532 -3.329 20" dur="10000" repeat="indefinite"></a-animation>
 </a-entity>
 <!--code for sky-->
@@ -147,24 +147,24 @@
 
 <a-plane position="84 -3.384 -5.235" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0" geometry="width:14"></a-plane>
 <a-plane position="-31 -3.504 -4" repeat="1 19" src="#grass" height="400" width="10" rotation="-90 0 0"></a-plane>
-<a-entity ply-model="src:car.ply" position="-2.341 -3.329 -72.266" scale="0.8 0.8 0.8" rotation="-90 180 0" >
+<a-entity ply-model="src:model/car.ply" position="-2.341 -3.329 -72.266" scale="0.8 0.8 0.8" rotation="-90 180 0" >
   <a-animation attribute="position" from="-2.341 -3.329 -4" to="-2.341 -3.329 180" dur="10000" repeat="indefinite"></a-animation>
 </a-entity>
 
-<a-entity ply-model="src:car.ply" position="27.948 -3.329 169.895" scale="0.8 0.8 0.8" rotation="-90 180 180" car>
+<a-entity ply-model="src:model/car.ply" position="27.948 -3.329 169.895" scale="0.8 0.8 0.8" rotation="-90 180 180" car>
   <a-animation attribute="position" from="27.948 -3.329 169.895" to="27.948 -3.329 -4" dur="10000" repeat="indefinite"></a-animation>
 </a-entity>
-<a-entity ply-model="src:human.ply" position="62.494 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0" person>
+<a-entity ply-model="src:model/human.ply" position="62.494 -3.329 -4" scale="0.4 0.4 0.4" rotation="-90 0 0" person>
   <a-animation attribute="position" from="62.494 -3.329 -4" to="62.494 -3.329 100" dur="18000" repeat="indefinite"></a-animation>
 </a-entity>
-<a-entity ply-model="src:car.ply" position="127.899 -3.329 220.361" scale="0.8 0.8 0.8" rotation="-90 180 90" car>
+<a-entity ply-model="src:model/car.ply" position="127.899 -3.329 220.361" scale="0.8 0.8 0.8" rotation="-90 180 90" car>
   <a-animation attribute="position" from="127.899 -3.329 220.361" to="280.899 -3.329 220.361" dur="10000" repeat="indefinite"></a-animation>
 </a-entity>
-<a-entity ply-model="src:car.ply" position="128.877 -3.329 253.122" scale="0.8 0.8 0.8" rotation="-90 180 90">
+<a-entity ply-model="src:model/car.ply" position="128.877 -3.329 253.122" scale="0.8 0.8 0.8" rotation="-90 180 90">
   <a-animation attribute="position" from="128.877 -3.329 253.122" to="280.899 -3.329 253.122" dur="10000" repeat="indefinite"></a-animation>
 </a-entity>
 
-<a-entity ply-model="src:human.ply" position="91.317 -3.329 286.773" scale="0.4 0.4 0.4" rotation="-90 90 0">
+<a-entity ply-model="src:model/human.ply" position="91.317 -3.329 286.773" scale="0.4 0.4 0.4" rotation="-90 90 0">
   <a-animation attribute="position" from="91.317 -3.329 286.773" to="200.317 -3.329 286.773" dur="10000" repeat="indefinite"></a-animation>
 </a-entity>
 <a-gui-flex-container
