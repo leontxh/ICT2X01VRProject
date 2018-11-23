@@ -186,9 +186,9 @@
 		</a-gui-flex-container>
 		
 		<!-- Text box. Adjustment for font-size at the end of the file-->
-		<form name="login">
-		<a-entity input type="password" name="pswrd" geometry="primitive: box; width:5; height:0.5; depth:0.01;" position="0 2 -4" material="shader: html; target: #htmlElement; fps:1;"></a-entity>
-		</form>
+		
+		<a-entity geometry="primitive: box; width:5; height:0.5; depth:0.01;" position="0 2 -4" material="shader: html; target: #htmlElement; fps:1;"></a-entity>
+		
 		
 		<!-- Start of Keyboard -->
 		<a-entity position="0 0.75 -4" rotation="-15 0 0">
@@ -721,9 +721,10 @@
 							   	gui-interactable="clickAction: keypress; keyCode:32;" id="space"
 								gui-button=" text:space; fontFamily:'Fira Sans';"
 					></a-entity>
+					<!-- Hardcoded Mock Login-->
 					<a-entity 	gui-item="type: button; width: 0.75; height: 0.5;"
 							   	gui-interactable="clickAction: enter; keyCode:13;" id="enter" 
-								onclick="check(this.form)"
+								onclick="window.location.href='designerSettings.html'"
 								gui-button=" text:Go; fontFamily:'Fira Sans';"
 					></a-entity>
 				</a-entity>
